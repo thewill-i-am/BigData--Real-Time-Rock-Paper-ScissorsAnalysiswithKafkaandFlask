@@ -9,7 +9,7 @@ app = Flask(__name__)
 def kafkastream():
     for message in consumer:
         yield (b'--frame\r\n'
-               b'Content-Type: image/jpeg\r\n\r\n' + message.value + b'\r\n\r\n')
+              b'Content-Type: image/jpeg\r\n\r\n' + message.value + b'\r\n\r\n')
 
 
 @app.route('/')
